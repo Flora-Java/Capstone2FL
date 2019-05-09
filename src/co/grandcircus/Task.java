@@ -59,16 +59,26 @@ public class Task {
 	}
 	
 	public void listTask(LinkedList<Task> list) {
+		String format = "%-15s %-15s %-15s %-15s \n";
 		for (int i = 0; i < list.size(); i++) {
-				System.out.println(list.get(i));
+				System.out.printf(format,list.get(i));
 		}
 	}
-	@Override // good best practice to use the @Override annotation, 
-	// but it is optional
-	public String toString() { 
-		
-		return " ";
+	@Override
+	public String toString() {
+		String content ="";
+		String format = "%-15s %-15s %-15s %-15s \n";
+		boolean listo = getDone();
+		String status ;
+		if (listo) {
+			status = "yes";
+		} else {
+			status = "no";
+		}
+		content = "format, getDescription(),  getDate(), status, getDescription()";
+	     return content;
 	}
+	
 	
 }
 
